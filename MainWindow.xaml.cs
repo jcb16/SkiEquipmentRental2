@@ -26,14 +26,14 @@ namespace SkiEquipmentRental2
             InitializeComponent();
         }
 
-        //funkcja jest wywoływana również po naciśnięciu enter
-        //private void Button_Click_KeyUp(object sender, KeyEventArgs e)
-        //{
-        //    if (e.Key == Key.Enter)
-        //    {
-        //        Button_Click(sender, e);
-        //    }
-        //}
+        funkcja jest wywoływana również po naciśnięciu enter
+        private void Button_Click_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Button_Click(sender, e);
+            }
+        }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
