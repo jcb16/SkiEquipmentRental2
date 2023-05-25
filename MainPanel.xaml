@@ -7,12 +7,22 @@
         mc:Ignorable="d"
         Title="MainPanel" Height="450" Width="600"
         Icon="C:\Users\kubek\source\repos\SkiEquipmentRental2\_icons\MainPanel.png">
-  
+
 
 
 
     <Grid Background="#FF22262C">
         <TextBlock HorizontalAlignment="Left" Height="449" Margin="0,-15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="56" Background="#FF3C424C"/>
+        <Button Content="" HorizontalAlignment="Left" Height="34" Margin="12,58,0,0" VerticalAlignment="Top" Width="32" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/home.png"/>
+            </Button.Background>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="7,115,0,0" VerticalAlignment="Top" Height="41" Width="42" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/id-card.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

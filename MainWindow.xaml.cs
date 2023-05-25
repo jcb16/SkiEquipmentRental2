@@ -23,10 +23,17 @@ namespace SkiEquipmentRental2
     {
         public MainWindow()
         {
+            //InitializeComponent();
             InitializeComponent();
+            Loaded += Window_Loaded;
         }
 
-        funkcja jest wywoływana również po naciśnięciu enter
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            usernameBox.Focus();
+        }
+
+        //funkcja jest wywoływana również po naciśnięciu enter
         private void Button_Click_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)

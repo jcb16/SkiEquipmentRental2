@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="home-page.png" />
+    <None Remove="home.png" />
+    <None Remove="id-card.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +19,8 @@
 
   <ItemGroup>
     <Resource Include="home-page.png" />
+    <Resource Include="home.png" />
+    <Resource Include="id-card.png" />
   </ItemGroup>
 
 </Project>
