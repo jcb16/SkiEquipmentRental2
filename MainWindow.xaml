@@ -1,0 +1,23 @@
+﻿<Window x:Class="SkiEquipmentRental2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SkiEquipmentRental2"
+        mc:Ignorable="d"
+        Title="LoginPanel" Height="320" Width="300" Background="#645e4c" Icon="C:\Users\kubek\source\repos\SkiEquipmentRental2\_icons\ink.png"><!--#FF272929-->
+    <!--<Border Background="#2e3137" CornerRadius ="20" Margin="20">
+        <StackPanel Margin="20">
+            <Label Content="Login" Foreground="white" FontSize="25" HorizontalAlignment="Center"/>
+            <Separator></Separator>
+            <Label Content="Username" Foreground="white" HorizontalAlignment="Center"/>
+            <TextBox x:Name ="usernameBox" Background="#545d6a" Foreground="white" FontSize="18"/>
+            <Label Content="Password" Foreground="white" HorizontalAlignment="Center"/>
+            <PasswordBox Name="passwordBox" KeyUp="Button_Click_KeyUp" Background="#545d6a" Foreground="white" FontSize="18"/>
+            
+            <Button Name="button" Background="#545d6a" Foreground="white"  FontSize="18" Content="Submit" Margin="60 13" Click="Button_Click"/>
+            
+        </StackPanel>
+
+    </Border>-->
+</Window>
