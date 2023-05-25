@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SkiEquipmentRental2"
         mc:Ignorable="d"
         Title="LoginPanel" Height="320" Width="300" Background="#645e4c" Icon="C:\Users\kubek\source\repos\SkiEquipmentRental2\_icons\ink.png"><!--#FF272929-->
-    <!--<Border Background="#2e3137" CornerRadius ="20" Margin="20">
+    <Border Background="#2e3137" CornerRadius ="20" Margin="20">
         <StackPanel Margin="20">
             <Label Content="Login" Foreground="white" FontSize="25" HorizontalAlignment="Center"/>
             <Separator></Separator>
@@ -19,5 +19,5 @@
             
         </StackPanel>
 
-    </Border>-->
+    </Border>
 </Window>
