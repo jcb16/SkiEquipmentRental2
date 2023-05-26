@@ -8,9 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="add.png" />
     <None Remove="home-page.png" />
     <None Remove="home.png" />
     <None Remove="id-card.png" />
+    <None Remove="rent.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,9 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="add.png" />
     <Resource Include="home-page.png" />
     <Resource Include="home.png" />
     <Resource Include="id-card.png" />
+    <Resource Include="rent.png" />
   </ItemGroup>
 
 </Project>

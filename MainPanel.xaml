@@ -13,14 +13,29 @@
 
     <Grid Background="#FF22262C">
         <TextBlock HorizontalAlignment="Left" Height="449" Margin="0,-15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="56" Background="#FF3C424C"/>
-        <Button Content="" HorizontalAlignment="Left" Height="34" Margin="12,58,0,0" VerticalAlignment="Top" Width="32" BorderBrush="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Height="38" Margin="8,72,0,0" VerticalAlignment="Top" Width="40" BorderBrush="{x:Null}" RenderTransformOrigin="0.55,0.185">
             <Button.Background>
                 <ImageBrush ImageSource="/home.png"/>
             </Button.Background>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="7,115,0,0" VerticalAlignment="Top" Height="41" Width="42" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button HorizontalAlignment="Left" Margin="7,124,0,0" VerticalAlignment="Top" Height="41" Width="42" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/id-card.png"/>
+            </Button.Background>
+        </Button>
+        <Button Content="" HorizontalAlignment="Left" Height="48" Margin="5,181,0,0" VerticalAlignment="Top" Width="46" Foreground="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.848,0.543">
+            <Button.Background>
+                <ImageBrush ImageSource="/rent.png"/>
+            </Button.Background>
+        </Button>
+        <Button Content="" HorizontalAlignment="Left" Margin="5,252,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="46" Height="46" RenderTransformOrigin="-87.79,-1.114">
+            <Button.Background>
+                <ImageBrush ImageSource="/add.png"/>
+            </Button.Background>
+        </Button>
+        <Button Content="" HorizontalAlignment="Left" Height="46" Margin="544,10,0,0" VerticalAlignment="Top" Width="46" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/_icons/exit.png"/>
             </Button.Background>
         </Button>
 
