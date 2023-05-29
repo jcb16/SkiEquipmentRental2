@@ -5,39 +5,141 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkiEquipmentRental2"
         mc:Ignorable="d"
-        Title="MainPanel" Height="450" Width="600"
+        Title="MainPanel" Height="450" Width="620"
         Icon="C:\Users\kubek\source\repos\SkiEquipmentRental2\_icons\MainPanel.png">
 
 
 
 
     <Grid Background="#FF22262C">
-        <TextBlock HorizontalAlignment="Left" Height="449" Margin="0,-15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="56" Background="#FF3C424C"/>
-        <Button Content="" HorizontalAlignment="Left" Height="38" Margin="8,72,0,0" VerticalAlignment="Top" Width="40" BorderBrush="{x:Null}" RenderTransformOrigin="0.55,0.185">
+        <TextBlock HorizontalAlignment="Left" Height="450" Margin="0,-15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="60" Background="#FF3C424C"/>
+        <Button Content="" HorizontalAlignment="Left" Height="38" Margin="10,60,0,0" VerticalAlignment="Top" Width="40" BorderBrush="{x:Null}" RenderTransformOrigin="0.55,0.185">
+            <!--Wyłącza podświetlenie ikon-->
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
             <Button.Background>
                 <ImageBrush ImageSource="/home.png"/>
             </Button.Background>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="7,124,0,0" VerticalAlignment="Top" Height="41" Width="42" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Height="40" Width="40" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <!--Wyłącza podświetlenie ikon-->
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
             <Button.Background>
                 <ImageBrush ImageSource="/id-card.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Height="48" Margin="5,181,0,0" VerticalAlignment="Top" Width="46" Foreground="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.848,0.543">
+        <Button Content="" HorizontalAlignment="Left" Height="42" Margin="10,180,0,0" VerticalAlignment="Top" Width="40" Foreground="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.848,0.543">
+            <!--Wyłącza podświetlenie ikon-->
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
             <Button.Background>
                 <ImageBrush ImageSource="/rent.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="5,252,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="46" Height="46" RenderTransformOrigin="-87.79,-1.114">
+        <Button Content="" HorizontalAlignment="Left" Margin="10,245,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="40" Height="40" RenderTransformOrigin="-87.79,-1.114">
+            <!--Wyłącza podświetlenie ikon-->
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="20">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
             <Button.Background>
                 <ImageBrush ImageSource="/add.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Height="46" Margin="544,10,0,0" VerticalAlignment="Top" Width="46" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <!--<Button Content="" HorizontalAlignment="Left" Height="42" Margin="548,10,0,0" VerticalAlignment="Top" Width="42" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
-                <ImageBrush ImageSource="/_icons/exit.png"/>
+                <ImageBrush ImageSource="/exit.png"/>
+            </Button.Background>
+        </Button>-->
+        <Button HorizontalAlignment="Left" Height="42" Margin="548,10,0,0" VerticalAlignment="Top" Width="42" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <!--Wyłącza podświetlenie ikon-->
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="20">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+            <Button.Background>
+                <ImageBrush ImageSource="/exit.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="6,302,0,0" VerticalAlignment="Top" Width="48" Height="47" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/analyze.png"/>
+            </Button.Background>
+            <Button.Foreground>
+                <ImageBrush/>
+            </Button.Foreground>
+            <!--usuwa podświetlenie-->
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Grid HorizontalAlignment="Left" Height="38" Margin="0,307,0,0" VerticalAlignment="Top" Width="60">
+            
+        </Grid>
+
+        
 
     </Grid>
 </Window>

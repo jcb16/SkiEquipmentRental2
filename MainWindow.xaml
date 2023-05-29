@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:SkiEquipmentRental2"
         mc:Ignorable="d"
         Title="LoginPanel" Height="325" Width="300" Background="#645e4c" Icon="C:\Users\kubek\source\repos\SkiEquipmentRental2\_icons\ink.png"><!--#FF272929-->
-
     
     
     <Window.Resources>
@@ -75,7 +74,7 @@
             <Label Content="Username" Foreground="white" HorizontalAlignment="Center"/>
             <TextBox x:Name ="usernameBox" Style="{StaticResource CustomTextBoxStyle}" Background="#545d6a" Foreground="white" FontSize="18" TextAlignment="Center"/>
             <Label Content="Password" Foreground="white" HorizontalAlignment="Center"/>
-            <PasswordBox x:Name="passwordBox" Style="{StaticResource CustomPasswordBoxStyle}" KeyUp="Button_Click_KeyUp" Background="#545d6a" Foreground="white" FontSize="18"/>
+            <PasswordBox x:Name="passwordBox" Style="{StaticResource CustomPasswordBoxStyle}" KeyUp="Button_Click_KeyUp" Background="#545d6a" Foreground="white" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
    
             <!--<Button Name="button" Background="#545d6a" Foreground="white"  FontSize="18" Content="Submit" Margin="60 13" Click="Button_Click"/>-->
             <Button Name="button" Background="#545d6a" Foreground="White" FontSize="18" Content="Submit" Margin="60 13" Click="Button_Click">
