@@ -37,10 +37,16 @@ namespace SkiEquipmentRental2
         {
             mainFrame.Content = new Employee();
         }
-        
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new Rent();
+        }
 
-   
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new SearchAndAddEquipment();
+        }
     }
 
 

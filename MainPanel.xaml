@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SkiEquipmentRental2"
         mc:Ignorable="d"
-        Title="MainPanel" Height="550" Width="850"
+        Title="MainPanel" Height="600" Width="920"
         Icon="C:\Users\kubek\source\repos\SkiEquipmentRental2\_icons\MainPanel.png">
 
     <Grid Background="#FF22262C">
-        <TextBlock HorizontalAlignment="Left" Height="549" Margin="0,-15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="81" Background="#FF3C424C"/>
+        <TextBlock HorizontalAlignment="Left" Height="599" Margin="0,-15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="81" Background="#FF3C424C"/>
         <Button Content="" HorizontalAlignment="Left" Height="48" Margin="16,57,0,0" VerticalAlignment="Top" Width="50" BorderBrush="{x:Null}" RenderTransformOrigin="0.55,0.185" Click="Button_Click">
             <!--Wyłącza podświetlenie ikon-->
             <Button.Style>
@@ -48,7 +48,7 @@
                 <ImageBrush ImageSource="/id-card.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Height="54" Margin="16,208,0,0" VerticalAlignment="Top" Width="51" Foreground="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.848,0.543">
+        <Button Content="" HorizontalAlignment="Left" Height="54" Margin="16,208,0,0" VerticalAlignment="Top" Width="51" Foreground="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.848,0.543" Click="Button_Click_1">
             <!--Wyłącza podświetlenie ikon-->
             <Button.Style>
                 <Style TargetType="Button">
@@ -67,7 +67,7 @@
                 <ImageBrush ImageSource="/rent.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="16,293,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="50" Height="52" RenderTransformOrigin="-87.79,-1.114">
+        <Button Content="" HorizontalAlignment="Left" Margin="16,293,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="50" Height="52" RenderTransformOrigin="-87.79,-1.114" Click="Button_Click_2">
             <!--Wyłącza podświetlenie ikon-->
             <Button.Style>
                 <Style TargetType="Button">
@@ -91,7 +91,7 @@
                 <ImageBrush ImageSource="/exit.png"/>
             </Button.Background>
         </Button>-->
-        <Button HorizontalAlignment="Left" Height="42" Margin="784,10,0,0" VerticalAlignment="Top" Width="44" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button HorizontalAlignment="Left" Height="42" Margin="846,10,0,0" VerticalAlignment="Top" Width="44" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <!--Wyłącza podświetlenie ikon-->
             <Button.Style>
                 <Style TargetType="Button">
@@ -135,7 +135,7 @@
         <Grid HorizontalAlignment="Left" Height="38" Margin="0,307,0,0" VerticalAlignment="Top" Width="60">
 
         </Grid>
-        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="436" Width="706" Margin="109,61,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="488" Width="773" Margin="109,61,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Frame.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

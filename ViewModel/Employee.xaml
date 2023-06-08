@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SkiEquipmentRental2.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="436" d:DesignWidth="706">
+             d:DesignHeight="488" d:DesignWidth="773">
     <Grid Background="#FF22262C">
-        <DataGrid HeadersVisibility="Column" Name="dataGrid" HorizontalAlignment="Left" Height="276" VerticalAlignment="Center" Width="550" Margin="39,0,0,0">
+        <DataGrid HeadersVisibility="Column" Name="dataGrid" HorizontalAlignment="Left" Height="276" VerticalAlignment="Top" Width="563" Margin="63,68,0,0">
             <!--SelectionChanged="DataGrid_SelectionChanged">d:ItemsSource="{d:SampleData ItemCount=5}"-->
             <DataGrid.Columns>
                 <DataGridTextColumn Width ="auto" Header="Imię" Binding="{Binding Imie}" />
@@ -20,6 +20,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Search" Name ="selectEmployee" HorizontalAlignment="Left" Height="41" Margin="609,80,0,0" VerticalAlignment="Top" Width="72" Click="selectEmployee_Click" RenderTransformOrigin="0.777,0.55"/>
+        <Button Content="Search" Name ="selectEmployee" HorizontalAlignment="Left" Height="41" Margin="672,68,0,0" VerticalAlignment="Top" Width="72" Click="selectEmployee_Click" RenderTransformOrigin="0.777,0.55"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="42" Margin="672,125,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.51,0.394"/>
     </Grid>
 </UserControl>
