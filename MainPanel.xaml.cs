@@ -1,5 +1,9 @@
-﻿using System;
+﻿using SkiEquipmentRental2.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,5 +27,21 @@ namespace SkiEquipmentRental2
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new DashboardView();
+        }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new Employee();
+        }
+        
+
+
+   
     }
+
+
 }
