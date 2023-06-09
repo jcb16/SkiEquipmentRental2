@@ -91,7 +91,7 @@
                 <ImageBrush ImageSource="/exit.png"/>
             </Button.Background>
         </Button>-->
-        <Button HorizontalAlignment="Left" Height="42" Margin="846,10,0,0" VerticalAlignment="Top" Width="44" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button HorizontalAlignment="Left" Height="42" Margin="846,10,0,0" VerticalAlignment="Top" Width="44" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.667,0.519">
             <!--Wyłącza podświetlenie ikon-->
             <Button.Style>
                 <Style TargetType="Button">
