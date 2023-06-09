@@ -47,6 +47,11 @@ namespace SkiEquipmentRental2
         {
             mainFrame.Content = new SearchAndAddEquipment();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new Statistics();
+        }
     }
 
 

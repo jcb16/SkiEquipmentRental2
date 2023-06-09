@@ -110,7 +110,7 @@
                 <ImageBrush ImageSource="/exit.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="62" Height="58" BorderBrush="{x:Null}">
+        <Button HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="62" Height="58" BorderBrush="{x:Null}" Click="Button_Click_3">
             <Button.Background>
                 <ImageBrush ImageSource="/analyze.png"/>
             </Button.Background>
