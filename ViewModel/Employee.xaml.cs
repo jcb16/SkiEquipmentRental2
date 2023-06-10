@@ -64,12 +64,6 @@ namespace SkiEquipmentRental2.ViewModel
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //SqlConnection con = new SqlConnection("Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True");
-            //sda = new SqlDataAdapter(@"SELECT * FROM tblPracownicy",con);
-            //dt = new DataTable();
-            //sda.Fill(dt);
-            //scb = new SqlCommandBuilder(sda);
-            //sda.Update(dt);
 
             string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
             string updateQuery = "UPDATE tblPracownicy SET Imie = @Imie, Nazwisko = @Nazwisko, Data_ur = @Data_ur, PESEL = @PESEL, Numer_tel = @Numer_tel,Login_prac = @Login_prac,  Password_prac=@Password_prac WHERE IDPracownik = @IDPracownik";
@@ -83,10 +77,7 @@ namespace SkiEquipmentRental2.ViewModel
                     foreach (DataRowView rowView in dataGrid.ItemsSource)
                     {
                         DataRow row = rowView.Row;
-                        //updateCmd.Parameters.Clear();
-                        //updateCmd.Parameters.AddWithValue("@Imie", row["Imie"]);
-                        //updateCmd.Parameters.AddWithValue("@Nazwisko", row["Nazwisko"]);
-                        //updateCmd.Parameters.AddWithValue("@IDPracownik", row["IDPracownik"]);
+                        
                         updateCmd.Parameters.Clear();
                         updateCmd.Parameters.AddWithValue("@Imie", row["Imie"].ToString());
                         updateCmd.Parameters.AddWithValue("@Nazwisko", row["Nazwisko"].ToString());
@@ -98,20 +89,110 @@ namespace SkiEquipmentRental2.ViewModel
                         updateCmd.Parameters.AddWithValue("@IDPracownik", Convert.ToInt32(row["IDPracownik"]));
 
 
-
-                        //updateCmd.Parameters.AddWithValue("@Pesel", row["Pesel"]);
-                        //updateCmd.Parameters.AddWithValue("@Numer_tel", row["Numer telefonu"]);
-                        //updateCmd.Parameters.AddWithValue("@Login", row["Login"]);
-                        //updateCmd.Parameters.AddWithValue("@Password", row["Hasło"]);
-
-
-
                         updateCmd.ExecuteNonQuery();
                     }
                 }
             }
 
 
+        }
+        private int GetMaxID(SqlConnection con)
+        {
+            string query = "SELECT MAX(IDPracownik) FROM tblPracownicy";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                object result = cmd.ExecuteScalar();
+                if (result != DBNull.Value && result != null)
+                {
+                    return Convert.ToInt32(result);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+
+        private void RefreshData()
+        {
+            string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
+            string query = "SELECT * FROM tblPracownicy";
+
+            using (SqlConnection con = new SqlConnection(connstring))
+            {
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+                    DataTable dtbl = new DataTable();
+                    sqlDa.Fill(dtbl);
+
+                    dataGrid.ItemsSource = dtbl.DefaultView;
+                }
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
+
+            using (SqlConnection con = new SqlConnection(connstring))
+            {
+                con.Open();
+
+                int maxID = GetMaxID(con); // Pobranie maksymalnej wartości IDPracownik
+
+                foreach (DataRowView rowView in dataGrid.ItemsSource)
+                {
+                    DataRow row = rowView.Row;
+
+                    // Pomiń rekord, który jest już dodany do bazy danych
+                    if (row.RowState != DataRowState.Added)
+                        continue;
+
+                    string query = "INSERT INTO tblPracownicy (IDPracownik, Imie, Nazwisko, Data_ur, PESEL, Numer_tel, Login_prac, Password_prac) " +
+                                   "VALUES (@IDPracownik, @Imie, @Nazwisko, @Data_ur, @PESEL, @Numer_tel, @Login_prac, @Password_prac)";
+
+                    SqlCommand insertCmd = new SqlCommand(query, con);
+                    insertCmd.Parameters.AddWithValue("@IDPracownik", maxID + 1); // Zwiększ wartość IDPracownik o 1
+                    insertCmd.Parameters.AddWithValue("@Imie", row["Imie"].ToString());
+                    insertCmd.Parameters.AddWithValue("@Nazwisko", row["Nazwisko"].ToString());
+                    insertCmd.Parameters.AddWithValue("@Data_ur", Convert.ToDateTime(row["Data_ur"]));
+                    insertCmd.Parameters.AddWithValue("@PESEL", row["PESEL"].ToString());
+                    insertCmd.Parameters.AddWithValue("@Numer_tel", row["Numer_tel"].ToString());
+                    insertCmd.Parameters.AddWithValue("@Login_prac", row["Login_prac"].ToString());
+                    insertCmd.Parameters.AddWithValue("@Password_prac", row["Password_prac"].ToString());
+
+                    insertCmd.ExecuteNonQuery();
+
+                    maxID++; // Zwiększenie wartości maxID o 1
+                }
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
+
+            using (SqlConnection con = new SqlConnection(connstring))
+            {
+                con.Open();
+
+                foreach (DataRowView rowView in dataGrid.SelectedItems)
+                {
+                    DataRow row = rowView.Row;
+                    int idPracownik = Convert.ToInt32(row["IDPracownik"]);
+
+                    string query = "DELETE FROM tblPracownicy WHERE IDPracownik = @IDPracownik";
+                    SqlCommand deleteCmd = new SqlCommand(query, con);
+                    deleteCmd.Parameters.AddWithValue("@IDPracownik", idPracownik);
+                    deleteCmd.ExecuteNonQuery();
+                }
+
+            }
+            RefreshData();
         }
     }
 

@@ -12,7 +12,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Width ="auto" Header="Imię" Binding="{Binding Imie}" />
                 <DataGridTextColumn Width ="auto" Header="Nazwisko" Binding="{Binding Nazwisko}" />
-                <DataGridTextColumn Width ="auto" Header="Data urodzenia" Binding="{Binding Data_ur}" />
+                <DataGridTextColumn Width ="auto" Header="Data urodzenia" Binding="{Binding Data_ur, StringFormat=\{0:yyyy-MM-dd\}}" />
                 <DataGridTextColumn Width ="auto" Header="Pesel" Binding="{Binding PESEL}" />
                 <DataGridTextColumn Width ="auto" Header="Numer telefonu" Binding="{Binding Numer_tel}" />
                 <DataGridTextColumn Width ="auto" Header="Login" Binding="{Binding Login_prac}" />
@@ -21,12 +21,8 @@
         </DataGrid>
 
         <Button Content="Search" Name ="selectEmployee" HorizontalAlignment="Left" Height="41" Margin="645,22,0,0" VerticalAlignment="Top" Width="99" Click="selectEmployee_Click" RenderTransformOrigin="0.777,0.55"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="42" Margin="645,160,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.51,0.394"/>
-        <TextBox HorizontalAlignment="Left" Name="Name" Height="45" Margin="53,361,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110"/>
-        <TextBox HorizontalAlignment="Left" Name="Surname" Height="45" Margin="189,361,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110"/>
-        <TextBox HorizontalAlignment="Left" Name="Data_ur" Height="45" Margin="319,361,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110"/>
-        <TextBox HorizontalAlignment="Left" Height="45" Margin="453,361,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110"/>
-        <TextBox HorizontalAlignment="Left" Height="45" Margin="584,361,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="42" Margin="645,160,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1"/>
         <Button Content="Modify" HorizontalAlignment="Left" Height="41" Margin="645,91,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="42" Margin="645,232,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click_2"/>
     </Grid>
 </UserControl>
