@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="488" d:DesignWidth="773">
     <Grid Background="#FF22262C">
-        <DataGrid HeadersVisibility="Column" Name="dataGrid3" HorizontalAlignment="Left" Width="406" Margin="243,57,0,45">
+        <DataGrid PreviewKeyDown="DataGrid_PreviewKeyDown" HeadersVisibility="Column" Name="dataGrid3" HorizontalAlignment="Left" Width="406" Margin="243,57,0,45">
             <DataGrid.Columns>
                 <DataGridTextColumn Width ="auto" Header="IDSprzęt" Binding="{Binding IDSprzet}" />
                 <DataGridTextColumn Width ="auto" Header="IDRodzaj" Binding="{Binding IDRodzaj}" />
@@ -36,7 +36,8 @@
         <TextBox Name="Brand" HorizontalAlignment="Left"  TextAlignment="Center" Height="52" Margin="53,116,0,0" TextWrapping="Wrap" Text="Marka" VerticalAlignment="Top" Width="92"/>
         <TextBox Name="Model" HorizontalAlignment="Left"  TextAlignment="Center" Height="47" Margin="53,197,0,0" TextWrapping="Wrap" Text="Model" VerticalAlignment="Top" Width="92"/>
         <TextBox Name ="ClassEq" HorizontalAlignment="Left"  TextAlignment="Center" Height="54" Margin="53,267,0,0" TextWrapping="Wrap" Text="Klasa" VerticalAlignment="Top" Width="92"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="26" Margin="680,116,0,0" VerticalAlignment="Top" Width="72" Click="Delete"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="26" Margin="680,116,0,0" VerticalAlignment="Top" Width="72" Click="DeleteData"/>
+        <Button Content="Update" HorizontalAlignment="Left" Height="26" Margin="680,179,0,0" VerticalAlignment="Top" Width="72" Click="UpdateData"/>
 
     </Grid>
 </UserControl>

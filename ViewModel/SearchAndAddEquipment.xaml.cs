@@ -58,7 +58,7 @@ namespace SkiEquipmentRental2.ViewModel
         private void RefreshData()
         {
             string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
-            string query = "SELECT * FROM tblPracownicy";
+            string query = "SELECT IDSprzet,r.IDRodzaj,r.Rodzaj,Marka,Model,Klasa FROM tblSprzet w JOIN tblRodzaj r on w.IDRodzaj = r.IDRodzaj";
 
             using (SqlConnection con = new SqlConnection(connstring))
             {
@@ -74,6 +74,8 @@ namespace SkiEquipmentRental2.ViewModel
                 }
             }
         }
+
+
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
@@ -123,52 +125,15 @@ namespace SkiEquipmentRental2.ViewModel
 
             string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
 
-            //using (SqlConnection con = new SqlConnection(connstring))
-            //{
-            //    con.Open();
 
-            //    foreach (DataRowView rowView in dataGrid3.ItemsSource)
-            //    {
-            //        DataRow row = rowView.Row;
-
-            //        // Pomiń rekord, który jest już dodany do bazy danych
-            //        if (row.RowState != DataRowState.Added)
-            //            continue;
-
-
-            //        string query = "INSERT INTO tblSprzet (IDRodzaj,Marka,Model,Klasa) " +
-            //                       "VALUES (@type, @brand, @model, @classEq)";
-
-            //        SqlCommand insertCmd = new SqlCommand(query, con);
-            //        insertCmd.Parameters.AddWithValue("@IDRodzaj", row["IDRodzaj"]);
-            //        insertCmd.Parameters.AddWithValue("@Marka", row["Marka"].ToString());
-            //        insertCmd.Parameters.AddWithValue("@Model", row["Model"].ToString());
-            //        insertCmd.Parameters.AddWithValue("@Klasa", row["Klasa"]);
-
-            //        //insertCmd.ExecuteNonQuery();
-
-            //        //maxID++; // Zwiększenie wartości maxID o 1
-            //        //RefreshData();
-            //        try
-            //        {
-            //            insertCmd.ExecuteNonQuery();
-            //        }
-            //        catch (SqlException ex)
-            //        {
-            //            MessageBox.Show("Wystąpił błąd przy dodawaniu sprzętu:\n" + ex.Message, "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
-            //            RefreshData();
-            //        }
-            //    }
-            //}
             using (SqlConnection con = new SqlConnection(connstring))
             {
                 con.Open();
 
-                string query = "INSERT INTO tblSprzet (IDRodzaj, Marka, Model, Klasa) " +
-                               "VALUES (@type, @brand, @model, @classEq)";
+                string query = "INSERT INTO tblSprzet (IDRodzaj, Marka, Model, Klasa) VALUES (@type, @brand, @model, @classEq)";
 
                 SqlCommand insertCmd = new SqlCommand(query, con);
-                insertCmd.Parameters.AddWithValue("@type", TypeID);
+                insertCmd.Parameters.AddWithValue("@type", (int)TypeID);
                 insertCmd.Parameters.AddWithValue("@brand", brand);
                 insertCmd.Parameters.AddWithValue("@model", model);
                 insertCmd.Parameters.AddWithValue("@classEq", classEq);
@@ -182,6 +147,76 @@ namespace SkiEquipmentRental2.ViewModel
                 catch (SqlException ex)
                 {
                     MessageBox.Show("Wystąpił błąd przy dodawaniu sprzętu:\n" + ex.Message, "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                RefreshData();
+            }
+        }
+
+        private void DeleteData(object sender, RoutedEventArgs e)
+        {
+            string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
+
+            using (SqlConnection con = new SqlConnection(connstring))
+            {
+                con.Open();
+
+                foreach (DataRowView rowView in dataGrid3.SelectedItems)
+                {
+                    DataRow row = rowView.Row;
+                    int idSprzet = Convert.ToInt32(row["IDSprzet"]);
+
+                    string query = "DELETE FROM tblSprzet WHERE IDSprzet = @IDSprzet";
+                    SqlCommand deleteCmd = new SqlCommand(query, con);
+                    deleteCmd.Parameters.AddWithValue("@IDSprzet", idSprzet);
+                    deleteCmd.ExecuteNonQuery();
+                }
+            }
+
+            RefreshData();
+        }
+
+        private void UpdateData(object sender, RoutedEventArgs e)
+        {
+            string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
+            string updateQuery = "UPDATE tblSprzet SET IDRodzaj = @IDRodzaj ,Marka = @Marka, Model = @Model, Klasa = @Klasa WHERE IDSprzet = @IDSprzet";
+
+
+            using (SqlConnection con = new SqlConnection(connstring))
+            {
+                con.Open();
+
+                using (SqlCommand updateCmd = new SqlCommand(updateQuery, con))
+                {
+                    foreach (DataRowView rowView in dataGrid3.ItemsSource)
+                    {
+                        DataRow row = rowView.Row;
+
+                        updateCmd.Parameters.Clear();
+                        updateCmd.Parameters.AddWithValue("@IDRodzaj", row["IDRodzaj"]);
+                        updateCmd.Parameters.AddWithValue("@Marka", row["Marka"].ToString());
+                        updateCmd.Parameters.AddWithValue("@Model", row["Model"].ToString());
+                        updateCmd.Parameters.AddWithValue("@Klasa", row["Klasa"].ToString());
+                        updateCmd.Parameters.AddWithValue("@IDSprzet", row["IDSprzet"]); 
+
+                        updateCmd.ExecuteNonQuery();
+                    }
+                }
+                RefreshData();
+            }
+        }
+
+        private void DataGrid_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                DataGridRow row = (DataGridRow)dataGrid3.ItemContainerGenerator.ContainerFromIndex(dataGrid3.SelectedIndex);
+                if (row != null)
+                {
+                    // Zapisz zmiany w wierszu
+                    row.BindingGroup.CommitEdit();
+
+                    // Zaktualizuj dane
+                    UpdateData(sender, e);
                 }
             }
         }
