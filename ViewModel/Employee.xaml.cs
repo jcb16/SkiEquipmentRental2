@@ -62,7 +62,7 @@ namespace SkiEquipmentRental2.ViewModel
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void UpdateData(object sender, RoutedEventArgs e)
         {
 
             string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
@@ -134,8 +134,9 @@ namespace SkiEquipmentRental2.ViewModel
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void AddData(object sender, RoutedEventArgs e)
         {
+            
             string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
 
             using (SqlConnection con = new SqlConnection(connstring))
@@ -152,6 +153,18 @@ namespace SkiEquipmentRental2.ViewModel
                     if (row.RowState != DataRowState.Added)
                         continue;
 
+                    // Pobierz wartość hasła z wiersza
+                    string password = row["Password_prac"].ToString();
+
+                    // Sprawdź warunek dla wymagań hasła
+                    if (password.Length <= 5)
+                    {
+                        // Hasło nie spełnia wymagań - komunikat
+                        MessageBox.Show("Hasło musi mieć co najmniej 6 znaków.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                        RefreshData();
+                        return; // Przerwij proces dodawania pracownika
+                    }
+
                     string query = "INSERT INTO tblPracownicy (IDPracownik, Imie, Nazwisko, Data_ur, PESEL, Numer_tel, Login_prac, Password_prac) " +
                                    "VALUES (@IDPracownik, @Imie, @Nazwisko, @Data_ur, @PESEL, @Numer_tel, @Login_prac, @Password_prac)";
 
@@ -165,14 +178,26 @@ namespace SkiEquipmentRental2.ViewModel
                     insertCmd.Parameters.AddWithValue("@Login_prac", row["Login_prac"].ToString());
                     insertCmd.Parameters.AddWithValue("@Password_prac", row["Password_prac"].ToString());
 
-                    insertCmd.ExecuteNonQuery();
+                    //insertCmd.ExecuteNonQuery();
 
-                    maxID++; // Zwiększenie wartości maxID o 1
+                    //maxID++; // Zwiększenie wartości maxID o 1
+                    //RefreshData();
+                    try
+                    {
+                        insertCmd.ExecuteNonQuery();
+                        maxID++; // Zwiększenie wartości maxID o 1
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Wystąpił błąd przy dodawaniu pracownika:\n" + ex.Message, "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                        RefreshData();
+                    }
+
                 }
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void DeleteData(object sender, RoutedEventArgs e)
         {
             string connstring = "Data Source=DESKTOP-RVQS4VV;Initial Catalog=WypozyczalniaFull;Integrated Security=True";
 

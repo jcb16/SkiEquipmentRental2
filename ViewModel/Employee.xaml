@@ -21,8 +21,8 @@
         </DataGrid>
 
         <Button Content="Search" Name ="selectEmployee" HorizontalAlignment="Left" Height="41" Margin="645,22,0,0" VerticalAlignment="Top" Width="99" Click="selectEmployee_Click" RenderTransformOrigin="0.777,0.55"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="42" Margin="645,160,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1"/>
-        <Button Content="Modify" HorizontalAlignment="Left" Height="41" Margin="645,91,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="42" Margin="645,232,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click_2"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="42" Margin="645,160,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.5,0.5" Click="AddData"/>
+        <Button Content="Modify" HorizontalAlignment="Left" Height="41" Margin="645,91,0,0" VerticalAlignment="Top" Width="99" Click="UpdateData"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="42" Margin="645,232,0,0" VerticalAlignment="Top" Width="99" Click="DeleteData"/>
     </Grid>
 </UserControl>

@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="488" d:DesignWidth="773">
     <Grid Background="#FF22262C">
-        <DataGrid HeadersVisibility="Column" Name="dataGrid3" HorizontalAlignment="Left" Height="278" VerticalAlignment="Top" Width="617" Margin="34,51,0,0">
+        <DataGrid HeadersVisibility="Column" Name="dataGrid3" HorizontalAlignment="Left" Width="406" Margin="243,57,0,45">
             <DataGrid.Columns>
                 <DataGridTextColumn Width ="auto" Header="IDSprzęt" Binding="{Binding IDSprzet}" />
                 <DataGridTextColumn Width ="auto" Header="IDRodzaj" Binding="{Binding IDRodzaj}" />
@@ -15,11 +15,28 @@
                 <DataGridTextColumn Width ="auto" Header="Marka" Binding="{Binding Marka}" />
                 <DataGridTextColumn Width ="auto" Header="Model" Binding="{Binding Model}" />
                 <DataGridTextColumn Width ="auto" Header="Klasa" Binding="{Binding Klasa}" />
-                
+
+
             </DataGrid.Columns>
-            
+
         </DataGrid>
-        <Button Content="Search" HorizontalAlignment="Left" Margin="680,53,0,0" VerticalAlignment="Top" Height="34" Width="72" Click="Button_Click"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="680,53,0,0" VerticalAlignment="Top" Height="34" Width="72" Click="Search_Click"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="35" Margin="63,371,0,0" VerticalAlignment="Top" Width="72" Click="Add_Click"/>
+
+        <ComboBox Name="Type" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"  Height="44" Margin="53,48,0,0" VerticalAlignment="Top" Width="92">
+            <ComboBoxItem >Narty</ComboBoxItem>
+            <ComboBoxItem>Snowboard</ComboBoxItem>
+            <ComboBoxItem>Kijki</ComboBoxItem>
+            <ComboBoxItem>Kask</ComboBoxItem>
+            <ComboBoxItem>Google</ComboBoxItem>
+            <ComboBoxItem>Buty narciarskie</ComboBoxItem>
+            <ComboBoxItem>Buty snowboardowe</ComboBoxItem>
+            <ComboBoxItem>Ochraniacze</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="Brand" HorizontalAlignment="Left"  TextAlignment="Center" Height="52" Margin="53,116,0,0" TextWrapping="Wrap" Text="Marka" VerticalAlignment="Top" Width="92"/>
+        <TextBox Name="Model" HorizontalAlignment="Left"  TextAlignment="Center" Height="47" Margin="53,197,0,0" TextWrapping="Wrap" Text="Model" VerticalAlignment="Top" Width="92"/>
+        <TextBox Name ="ClassEq" HorizontalAlignment="Left"  TextAlignment="Center" Height="54" Margin="53,267,0,0" TextWrapping="Wrap" Text="Klasa" VerticalAlignment="Top" Width="92"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="26" Margin="680,116,0,0" VerticalAlignment="Top" Width="72" Click="Delete"/>
 
     </Grid>
 </UserControl>
