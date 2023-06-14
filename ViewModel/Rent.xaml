@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="488" d:DesignWidth="773">
     <Grid Background="#FF22262C">
-        <DataGrid HeadersVisibility="Column" Name="dataGrid2" HorizontalAlignment="Left" Height="193" VerticalAlignment="Top" Width="617" Margin="35,51,0,0">
+        <DataGrid HeadersVisibility="Column" Name="dataGrid4" HorizontalAlignment="Left" Height="193" VerticalAlignment="Top" Width="617" Margin="35,51,0,0" Background="#FF3E3C3C" BorderBrush="#FF020910">
             <DataGrid.Columns>
                 <DataGridTextColumn Width ="auto" Header="IDWypozyczenia" Binding="{Binding IDWypozyczenia}" />
                 <DataGridTextColumn Width ="auto" Header="IDPracownik" Binding="{Binding IDPracownik}" />
@@ -23,8 +23,12 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Search" HorizontalAlignment="Left" Height="47" Margin="672,51,0,0" VerticalAlignment="Top" Width="81" Click="Button_Click"/>
-        <Calendar HorizontalAlignment="Left" Height="161" Margin="113,289,0,0" VerticalAlignment="Top" Width="199"/>
-        <Calendar HorizontalAlignment="Left" Height="161" Margin="440,289,0,0" VerticalAlignment="Top" Width="173"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="47" Margin="574,334,0,0" VerticalAlignment="Top" Width="81" Click="Button_Click_1"/>
 
+        <TextBox Name ="IDPracownik" GotFocus="ID_TextChanged" PreviewTextInput="TextBox_PreviewTextInput" HorizontalAlignment="Left" Height="35" Margin="81,311,0,0" TextWrapping="Wrap" Text="IDPracownik" VerticalAlignment="Top" Width="80" />
+        <TextBox Name ="idStuff" GotFocus="BrandFocus" HorizontalAlignment="Left" Height="35" Margin="81,361,0,0" TextWrapping="Wrap" Text="IDSprzęt" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.262,0.543"/>
+        <TextBox Name ="idCliennt" GotFocus="ModelFocus" HorizontalAlignment="Left" Height="35" Margin="198,311,0,0" TextWrapping="Wrap" Text="IDKlienta" VerticalAlignment="Top" Width="80"/>
+        <Calendar Name ="Date" HorizontalAlignment="Left" Height="173" Margin="318,276,0,0" VerticalAlignment="Top" Width="213"/>
+        <TextBox Name ="Hourss" GotFocus="HoursFocus" PreviewTextInput="TextBox_PreviewTextInput" HorizontalAlignment="Left" Height="35" Margin="198,361,0,0" TextWrapping="Wrap" Text="Na ile godzin?" VerticalAlignment="Top" Width="80"/>
     </Grid>
 </UserControl>
