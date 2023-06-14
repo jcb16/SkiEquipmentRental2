@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="488" d:DesignWidth="773">
     <Grid Background="#FF22262C">
-        <DataGrid HeadersVisibility="Column" Name="dataGrid" HorizontalAlignment="Left" Height="276" VerticalAlignment="Top" Width="563" Margin="53,22,0,0">
+        <DataGrid HeadersVisibility="Column" Name="dataGrid" HorizontalAlignment="Left" Height="307" VerticalAlignment="Top" Width="563" Margin="45,94,0,0" Foreground="#FF3A3939" Background="#FF232222" BorderBrush="#FF232222">
             <!--SelectionChanged="DataGrid_SelectionChanged">d:ItemsSource="{d:SampleData ItemCount=5}"-->
             <DataGrid.Columns>
                 <DataGridTextColumn Width ="auto" Header="Imię" Binding="{Binding Imie}" />
@@ -20,9 +20,9 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Search" Name ="selectEmployee" HorizontalAlignment="Left" Height="41" Margin="645,22,0,0" VerticalAlignment="Top" Width="99" Click="selectEmployee_Click" RenderTransformOrigin="0.777,0.55"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="42" Margin="645,160,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.5,0.5" Click="AddData"/>
-        <Button Content="Modify" HorizontalAlignment="Left" Height="41" Margin="645,91,0,0" VerticalAlignment="Top" Width="99" Click="UpdateData"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="42" Margin="645,232,0,0" VerticalAlignment="Top" Width="99" Click="DeleteData"/>
+        <Button Content="Search" Name ="selectEmployee" HorizontalAlignment="Left" Height="41" Margin="649,120,0,0" VerticalAlignment="Top" Width="99" Click="selectEmployee_Click" RenderTransformOrigin="0.777,0.55"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="42" Margin="649,258,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.5,0.5" Click="AddData"/>
+        <Button Content="Modify" HorizontalAlignment="Left" Height="41" Margin="649,189,0,0" VerticalAlignment="Top" Width="99" Click="UpdateData"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="42" Margin="649,330,0,0" VerticalAlignment="Top" Width="99" Click="DeleteData"/>
     </Grid>
 </UserControl>

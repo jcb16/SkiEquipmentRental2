@@ -7,5 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="#FF22262C" >
+        <TextBlock HorizontalAlignment="Left" Height="306" Margin="66,117,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="Witaj w SkiEquipmentRental" VerticalAlignment="Top" Width="693" FontSize="72" Foreground="#FFEDE9E9"/>
+
     </Grid>
 </UserControl>

@@ -26,6 +26,8 @@ namespace SkiEquipmentRental2
         public MainPanel()
         {
             InitializeComponent();
+            ResizeMode = ResizeMode.NoResize;
+            //ResizeMode = ResizeMode.CanResize;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -51,6 +53,13 @@ namespace SkiEquipmentRental2
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = new Statistics();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+                // Zamykanie aplikacji
+                Application.Current.Shutdown();
+            
         }
     }
 

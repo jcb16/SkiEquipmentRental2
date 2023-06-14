@@ -220,5 +220,23 @@ namespace SkiEquipmentRental2.ViewModel
                 }
             }
         }
+
+        private void Brand_TextChanged(object sender, RoutedEventArgs e)
+        {
+                // Czyszczenie zawartości TextBoxa po kliknięciu
+                Brand.Text = string.Empty;
+        }
+
+        private void Model_TextChanged(object sender, RoutedEventArgs e)
+        {
+            // Czyszczenie zawartości TextBoxa po kliknięciu
+            Model.Text = string.Empty;
+        }
+
+        private void ClassEq_TextChanged(object sender, RoutedEventArgs e)
+        {
+            // Czyszczenie zawartości TextBoxa po kliknięciu
+            ClassEq.Text = string.Empty;
+        }
     }
 }

@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="488" d:DesignWidth="773">
     <Grid Background="#FF22262C">
-        <DataGrid PreviewKeyDown="DataGrid_PreviewKeyDown" HeadersVisibility="Column" Name="dataGrid3" HorizontalAlignment="Left" Width="406" Margin="243,57,0,45">
+        <DataGrid PreviewKeyDown="DataGrid_PreviewKeyDown" HeadersVisibility="Column" Name="dataGrid3" HorizontalAlignment="Left" Width="406" Margin="243,48,0,45" Background="#FF3A3939" Foreground="#FF3A3939" BorderBrush="#FF171717">
             <DataGrid.Columns>
                 <DataGridTextColumn Width ="auto" Header="IDSprzęt" Binding="{Binding IDSprzet}" />
                 <DataGridTextColumn Width ="auto" Header="IDRodzaj" Binding="{Binding IDRodzaj}" />
@@ -21,9 +21,9 @@
 
         </DataGrid>
         <Button Content="Search" HorizontalAlignment="Left" Margin="680,53,0,0" VerticalAlignment="Top" Height="34" Width="72" Click="Search_Click"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="35" Margin="63,371,0,0" VerticalAlignment="Top" Width="72" Click="Add_Click"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="34" Margin="84,338,0,0" VerticalAlignment="Top" Width="92" Click="Add_Click"/>
 
-        <ComboBox Name="Type" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"  Height="44" Margin="53,48,0,0" VerticalAlignment="Top" Width="92">
+        <ComboBox Name="Type" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"  Height="44" Margin="84,60,0,0" VerticalAlignment="Top" Width="92">
             <ComboBoxItem >Narty</ComboBoxItem>
             <ComboBoxItem>Snowboard</ComboBoxItem>
             <ComboBoxItem>Kijki</ComboBoxItem>
@@ -33,11 +33,11 @@
             <ComboBoxItem>Buty snowboardowe</ComboBoxItem>
             <ComboBoxItem>Ochraniacze</ComboBoxItem>
         </ComboBox>
-        <TextBox Name="Brand" HorizontalAlignment="Left"  TextAlignment="Center" Height="52" Margin="53,116,0,0" TextWrapping="Wrap" Text="Marka" VerticalAlignment="Top" Width="92"/>
-        <TextBox Name="Model" HorizontalAlignment="Left"  TextAlignment="Center" Height="47" Margin="53,197,0,0" TextWrapping="Wrap" Text="Model" VerticalAlignment="Top" Width="92"/>
-        <TextBox Name ="ClassEq" HorizontalAlignment="Left"  TextAlignment="Center" Height="54" Margin="53,267,0,0" TextWrapping="Wrap" Text="Klasa" VerticalAlignment="Top" Width="92"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Height="26" Margin="680,116,0,0" VerticalAlignment="Top" Width="72" Click="DeleteData"/>
-        <Button Content="Update" HorizontalAlignment="Left" Height="26" Margin="680,179,0,0" VerticalAlignment="Top" Width="72" Click="UpdateData"/>
+        <TextBox Name="Brand" VerticalContentAlignment="Center" HorizontalAlignment="Left"  TextAlignment="Center" Height="34" Margin="84,133,0,0" TextWrapping="Wrap" Text="Marka" VerticalAlignment="Top" Width="92" GotFocus="Brand_TextChanged"/>
+        <TextBox Name="Model" VerticalContentAlignment="Center" HorizontalAlignment="Left"  TextAlignment="Center" Height="36" Margin="84,196,0,0" TextWrapping="Wrap" Text="Model" VerticalAlignment="Top" Width="92" GotFocus="Model_TextChanged"/>
+        <TextBox Name ="ClassEq" VerticalContentAlignment="Center" HorizontalAlignment="Left"  TextAlignment="Center" Height="33" Margin="84,256,0,0" TextWrapping="Wrap" Text="Klasa" VerticalAlignment="Top" Width="92" GotFocus="ClassEq_TextChanged"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="34" Margin="680,116,0,0" VerticalAlignment="Top" Width="72" Click="DeleteData"/>
+        <Button Content="Update" HorizontalAlignment="Left" Height="34" Margin="680,179,0,0" VerticalAlignment="Top" Width="72" Click="UpdateData"/>
 
     </Grid>
 </UserControl>

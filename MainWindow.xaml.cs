@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkiEquipmentRental2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
